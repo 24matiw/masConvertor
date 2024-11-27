@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Ganancias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Gestión de Ganancias</h1>
+</header>
+
+<section class="currency-converter">
+    <h2>Convertidor de Dólar a Peso</h2>
+    <form id="currencyForm">
+        <label for="amount">Cantidad:</label>
+        <input type="number" id="amount" step="0.01" placeholder="Ingresa cantidad" required>
+        
+        <label for="conversionType">Convertir:</label>
+        <select id="conversionType">
+            <option value="usdToArs">USD a ARS</option>
+            <option value="arsToUsd">ARS a USD</option>
+        </select>
+
+        <button type="submit">Convertir</button>
+    </form>
+    <p id="conversionResult"></p>
+</section>
+
+<main>
+    <!-- Sección de formulario para agregar productos -->
+    <section class="form-section">
+        <h2>Agregar Producto</h2>
+        <form id="productForm">
+            <label for="productName">Nombre del producto:</label>
+            <input type="text" id="productName" required>
+
+            <label for="purchasePrice">Precio de compra (en ARS):</label>
+            <input type="number" id="purchasePrice" step="0.01" required>
+
+            <label for="salePrice">Precio de venta (en ARS):</label>
+            <input type="number" id="salePrice" step="0.01" required>
+
+            <label for="shippingCost">Costo de envío (en ARS):</label>
+            <input type="number" id="shippingCost" step="0.01" required>
+
+            <button type="submit">Agregar</button>
+        </form>
+    </section>
+
+    <!-- Filtro de productos -->
+    <section class="filter-section">
+        <h2>Filtro de Productos</h2>
+        <input type="text" id="searchInput" placeholder="Buscar producto...">
+    </section>
+
+    <!-- Sección de tabla para mostrar los productos y ganancias -->
+    <section class="table-section">
+        <h2>Productos Vendidos</h2>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio de Compra</th>
+                    <th>Precio de Venta</th>
+                    <th>Costo de Envío</th>
+                    <th>Total (ARS)</th>
+                    <th>Ganancia Sin Envío (ARS)</th>
+                    <th>Ganancia Con Envío (ARS)</th>
+                    <th>Ganancia (USD)</th>
+                    <th>Porcentaje de Ganancia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p class="total-gain">Ganancia total: $0.00</p>
+        <button id="clearAllButton">Eliminar todo</button>
+        <button id="exportDataButton">Exportar a Excel</button>
+    </section>
+
+    <!-- Convertidor de moneda -->
+
+</main>
+
+<script src="javaScript.js"></script>
+</body>
+</html>
